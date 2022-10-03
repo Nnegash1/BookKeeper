@@ -17,15 +17,14 @@
         android:id="@+id/fragmentInsertItem"
         android:name="com.example.bookkeeper.ui.main.FragmentInvoiceDetail"
         android:label="fragment_insert_item"
-        tools:layout="@layout/fragment_insert_item"/>
-    <fragment
-        android:id="@+id/fragment_Invoice_Detail"
-        android:name="com.example.bookkeeper.ui.main.FragmentInfoPage"
-        android:label="fragment__invoice__detail"
-        tools:layout="@layout/fragment__invoice__detail" />
+        tools:layout="@layout/fragment_client_detail">
+        <action
+            android:id="@+id/action_fragmentInsertItem_to_fragment_Add_Item"
+            app:destination="@id/fragment_Add_Item" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_Add_Item"
         android:name="com.example.bookkeeper.ui.main.FragmentItemPage"
         android:label="fragment__add__item"
-        tools:layout="@layout/fragment__add__item" />
+        tools:layout="@layout/fragment_add_item" />
 </navigation>

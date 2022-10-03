@@ -2,10 +2,10 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/invoice_background"
     android:id="@+id/title"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/invoice_background">
 
 
     <androidx.appcompat.widget.SearchView
@@ -44,6 +44,7 @@
         android:background="@android:color/transparent"
         android:backgroundTint="@color/white"
         android:clickable="true"
+        android:contentDescription="TODO"
         android:focusable="true"
         app:rippleColor="@color/black"
         app:srcCompat="@android:drawable/ic_input_add" />

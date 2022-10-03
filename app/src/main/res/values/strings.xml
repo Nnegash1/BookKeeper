@@ -8,6 +8,8 @@
     <string name="vector">Vector</string>
     <string name="detail">Detail</string>
     <string name="add_item">Add Item</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="description">1200R20 668 22PR</string>
+    <string name="brand">Triangle</string>
+    <string name="origin">china</string>
+    <string name="save">save</string>
 </resources>

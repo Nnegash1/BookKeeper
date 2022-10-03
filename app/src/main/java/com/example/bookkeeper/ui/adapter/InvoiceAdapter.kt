@@ -35,7 +35,7 @@ class InvoiceCardViewHolder(private val binding: InvoiceCardBinding) :
 
     fun display(card: Invoice) {
         with(binding) {
-            client.text =  card.client
+            client.text = card.client
             invoiceNumber.text = card.invoice_id.toString()
         }
     }
