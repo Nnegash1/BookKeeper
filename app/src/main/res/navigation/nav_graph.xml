@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/HomePageFragment">
+    <fragment
+        android:id="@+id/HomePageFragment"
+        android:name="com.example.bookkeeper.ui.main.HomePageFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_home_page">
+        <action
+            android:id="@+id/action_HomePageFragment_to_fragmentInsertItem2"
+            app:destination="@id/fragmentInsertItem" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentInsertItem"
+        android:name="com.example.bookkeeper.ui.main.FragmentInvoiceDetail"
+        android:label="fragment_insert_item"
+        tools:layout="@layout/fragment_insert_item"/>
+    <fragment
+        android:id="@+id/fragment_Invoice_Detail"
+        android:name="com.example.bookkeeper.ui.main.FragmentInfoPage"
+        android:label="fragment__invoice__detail"
+        tools:layout="@layout/fragment__invoice__detail" />
+    <fragment
+        android:id="@+id/fragment_Add_Item"
+        android:name="com.example.bookkeeper.ui.main.FragmentItemPage"
+        android:label="fragment__add__item"
+        tools:layout="@layout/fragment__add__item" />
+</navigation>
