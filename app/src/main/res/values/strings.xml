@@ -12,4 +12,9 @@
     <string name="brand">Triangle</string>
     <string name="origin">china</string>
     <string name="save">save</string>
+    <string name="hs_code">HS_CODE</string>
+    <string name="title">New Item</string>
+    <string name="Item">item</string>
+    <string name="qty">qty</string>
+    <string name="unit_price">unit price</string>
 </resources>

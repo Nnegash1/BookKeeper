@@ -18,9 +18,4 @@ class InvoiceViewModel : ViewModel() {
         _uiState.value = UIState.Success(response)
         Log.d("TAG", "getAllInvoice: ${response.invoiceData[0].address}")
     }
-
-    fun addInvoice(invoice: Invoice) = viewModelScope.launch {
-        InvoiceRepository.addInvoice(invoice)
-    }
-
 }

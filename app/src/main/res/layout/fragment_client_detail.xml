@@ -21,13 +21,16 @@
         android:textStyle="bold" />
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/client_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#3A3838">
+        android:backgroundTint="#3A3838"
+        android:clickable="true"
+        android:focusable="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -57,13 +60,16 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/detail_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#3A3838">
+        android:backgroundTint="#3A3838"
+        android:clickable="true"
+        android:focusable="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -77,6 +83,8 @@
                 android:layout_marginTop="9dp"
                 android:layout_marginEnd="9dp"
                 android:layout_marginBottom="9dp"
+                android:clickable="true"
+                android:focusable="true"
                 android:text="@string/detail"
                 android:textColor="@color/white"
                 android:textSize="17sp"
@@ -93,13 +101,16 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/item_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="#3A3838">
+        android:backgroundTint="#3A3838"
+        android:clickable="true"
+        android:focusable="true">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -113,10 +124,22 @@
                 android:layout_marginTop="9dp"
                 android:layout_marginEnd="9dp"
                 android:layout_marginBottom="9dp"
+                android:clickable="true"
+                android:focusable="true"
                 android:text="@string/add_item"
                 android:textColor="@color/white"
                 android:textSize="17sp"
                 android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/item_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/item"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="9dp"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="9dp" />
 
             <ImageView
                 android:layout_width="30dp"

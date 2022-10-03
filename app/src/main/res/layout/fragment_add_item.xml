@@ -12,7 +12,7 @@
         android:layout_gravity="center"
         android:titleTextColor="@color/white"
         android:textAlignment="center"
-        android:title="New Item"
+        android:title="@string/title"
         style="@style/TextAppearance.AppCompat.Large"
         tools:targetApi="m" />
 
@@ -24,6 +24,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:hint="@string/description"
+        android:textColorHint="@color/teal_700"
         android:textColor="@color/white" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -32,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:textColorHint="@color/teal_700"
         android:hint="@string/brand"
         android:textColor="@color/white" />
 
@@ -42,6 +44,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textColorHint="@color/teal_700"
         android:hint="@string/origin"
         android:textColor="@color/white" />
 
@@ -52,6 +55,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textColorHint="@color/teal_700"
+        android:hint="@string/hs_code"
         android:textColor="@color/white" />
 
 
@@ -62,6 +67,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:hint="@string/Item"
+        android:textColorHint="@color/teal_700"
         android:textColor="@color/white" />
 
 
@@ -72,6 +79,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:textColorHint="@color/teal_700"
+        android:hint="@string/qty"
         android:textColor="@color/white" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -81,16 +90,19 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:hint="@string/unit_price"
+        android:textColorHint="@color/teal_700"
         android:textColor="@color/white" />
 
     <Button
+        android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:backgroundTint="@color/white"
+        android:backgroundTint="@color/teal_700"
         android:text="@string/save"
         android:textColor="@color/black" />
 

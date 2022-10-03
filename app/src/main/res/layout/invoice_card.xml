@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/invoice_background"
+        android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="20dp"
         android:clickable="true"
         android:focusable="true">
