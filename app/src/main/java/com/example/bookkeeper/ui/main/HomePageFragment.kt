@@ -20,6 +20,7 @@ class HomePageFragment : Fragment() {
     private lateinit var binding: FragmentHomePageBinding
     private val vm: InvoiceViewModel by viewModels()
     private val adapter = InvoiceAdapter()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

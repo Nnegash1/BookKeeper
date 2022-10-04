@@ -8,6 +8,6 @@ data class Item(
     val item: String,
     val qty: Double,
     val unit_price: Double,
-    val discount: Double,
-    val fob_price: Double
+    val discount: Double = 0.0,
+    val fob_price: Double = 0.0
 )

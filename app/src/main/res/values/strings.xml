@@ -11,10 +11,29 @@
     <string name="description">1200R20 668 22PR</string>
     <string name="brand">Triangle</string>
     <string name="origin">china</string>
-    <string name="save">save</string>
+    <string name="save">Save</string>
     <string name="hs_code">HS_CODE</string>
     <string name="title">New Item</string>
     <string name="Item">item</string>
     <string name="qty">qty</string>
     <string name="unit_price">unit price</string>
+    <string name="total_price">Total Price</string>
+    <string name="DollarSign">$</string>
+    <string name="back_button">BackButton</string>
+    <string name="invoice">Invoice</string>
+    <string name="service">Service</string>
+    <string name="discount">Discount</string>
+    <string name="todo">TODO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="cancel">Cancel</string>
+    <string name="client_name">Client Name</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="country">Country</string>
+    <string name="street">Street</string>
+    <string name="apt_suit">Apt, Suit</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="city">City</string>
+    <string name="province_state">Province/State</string>
 </resources>

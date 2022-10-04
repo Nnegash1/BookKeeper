@@ -3,16 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_baseline_keyboard_backspace_24.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_baseline_view_headline_24.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1475" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2753962198893229" />
+        <entry key="app/src/main/res/layout/bottom_navigation.xml" value="0.195526123046875" />
         <entry key="app/src/main/res/layout/fragment__add__item.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/fragment__invoice__detail.xml" value="0.2947916666666667" />
-        <entry key="app/src/main/res/layout/fragment_add_item.xml" value="0.30714416503906244" />
+        <entry key="app/src/main/res/layout/fragment_add_client.xml" value="0.2671875" />
+        <entry key="app/src/main/res/layout/fragment_add_item.xml" value="0.19519519519519518" />
         <entry key="app/src/main/res/layout/fragment_client_detail.xml" value="0.2947916666666667" />
-        <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.19521942138671872" />
+        <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_insert_item.xml" value="0.31806640625000004" />
-        <entry key="app/src/main/res/layout/fragment_invoice_detail.xml" value="0.2924530029296875" />
+        <entry key="app/src/main/res/layout/fragment_invoice_detail.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.24512023925781257" />
         <entry key="app/src/main/res/layout/invoice_card.xml" value="0.1781829833984375" />
+        <entry key="app/src/main/res/layout/item_card.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.29375" />
       </map>
     </option>
   </component>

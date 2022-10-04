@@ -1,4 +1,4 @@
-package com.example.bookkeeper.ui.fragment_item_page
+package com.example.bookkeeper.ui.item_page_viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,8 +11,13 @@ class ItemPageViewModel : ViewModel() {
     private val _itemState: MutableStateFlow<ItemScreenState> =
         MutableStateFlow(ItemScreenState.Empty)
     val itemState get() = _itemState.asStateFlow()
+    private val itemContainer: MutableList<Item> = mutableListOf()
 
-    fun getAddedItem(item: Item) = viewModelScope.launch {
-        _itemState.value = ItemScreenState.Success(item)
+    fun getAddedItem() = viewModelScope.launch {
+        _itemState.value = ItemScreenState.Success(itemContainer)
+    }
+
+    fun addItem(item: Item) {
+        itemContainer.add(item)
     }
 }
