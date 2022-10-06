@@ -17,9 +17,9 @@
     <string name="Item">item</string>
     <string name="qty">qty</string>
     <string name="unit_price">unit price</string>
-    <string name="total_price">Total Price</string>
+    <string name="total_price">Total Price :</string>
     <string name="DollarSign">$</string>
-    <string name="back_button">BackButton</string>
+    <string name="back_button">Back</string>
     <string name="invoice">Invoice</string>
     <string name="service">Service</string>
     <string name="discount">Discount</string>
@@ -36,4 +36,16 @@
     <string name="postal_code">Postal Code</string>
     <string name="city">City</string>
     <string name="province_state">Province/State</string>
+    <string name="phone">phone</string>
+    <string name="invoice_detail">Invoice Detail</string>
+    <string name="naj_003">NAJ-003</string>
+    <string name="invoice_number">Invoice Number</string>
+    <string name="oct_4_2022">Oct 4, 2022</string>
+    <string name="dollar">Dollar $</string>
+    <string name="percent">percent %</string>
+    <string name="_0_00">0.00</string>
+    <string name="reference_no">Reference No :</string>
+    <string name="_000000001">000000001</string>
+    <string name="o9_4_2022">O9/4/2022</string>
+    <string name="issue_date">Issue Date</string>
 </resources>

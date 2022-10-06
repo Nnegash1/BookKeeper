@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/invoice_background"
-    android:orientation="vertical">
+    android:background="@color/primary_color"
+    android:orientation="vertical"
+    tools:context="com.example.bookkeeper.presentation.view.FragmentAddClient">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -18,7 +21,7 @@
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:background="@color/invoice_background"
+            android:background="@color/primary_color"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -29,35 +32,50 @@
                 android:id="@+id/cancel_button"
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
-                android:layout_gravity="start"
-                android:textAllCaps="false"
-                android:textColor="#55CFE4"
-                android:backgroundTint="@color/invoice_background"
+                android:layout_gravity="end"
+                android:backgroundTint="@color/secondary_color_variant"
+                android:scaleType="fitCenter"
                 android:text="@string/cancel"
-                android:scaleType="fitCenter"/>
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/back_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="start"
                 android:backgroundTint="@color/invoice_background"
                 android:text="@string/add_client"
                 android:textAllCaps="false"
+                android:textStyle="bold"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="30sp" />
 
             <Button
                 android:id="@+id/submit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:textColor="#55CFE4"
-                android:backgroundTint="@color/invoice_background"
+                android:backgroundTint="@color/secondary_color_variant"
                 android:text="@string/save"
-                android:textAllCaps="false" />
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:textColor="@color/black" />
         </Toolbar>
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Contact Information"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/client_name"
@@ -69,7 +87,7 @@
         android:autofillHints=""
         android:hint="@string/client_name"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+        android:textColorHint="@color/white" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/email"
@@ -81,19 +99,31 @@
         android:autofillHints="emailAddress"
         android:hint="@string/email"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+        android:textColorHint="@color/white" />
 
-    <TextView
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/phone_number"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:autofillHints="phone"
+        android:hint="@string/phone"
         android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textStyle="bold"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/address"
+        android:textColor="@color/white"
         android:textSize="20sp"
-        android:text="@string/address"/>
+        android:textStyle="bold" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/country"
@@ -105,7 +135,7 @@
         android:autofillHints="Country"
         android:hint="@string/country"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+        android:textColorHint="@color/white" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/street"
@@ -116,7 +146,7 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/street"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+        android:textColorHint="@color/white" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/apt_suit"
@@ -127,7 +157,7 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/apt_suit"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+        android:textColorHint="@color/white" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/post_code"
@@ -139,7 +169,7 @@
         android:autofillHints="postalCode"
         android:hint="@string/postal_code"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+        android:textColorHint="@color/white" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/city"
@@ -150,10 +180,10 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/city"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+        android:textColorHint="@color/white" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/discount"
+        android:id="@+id/state"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -161,6 +191,6 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/province_state"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+        android:textColorHint="@color/white" />
 
 </LinearLayout>

@@ -7,16 +7,11 @@
     android:layout_marginTop="5dp"
     android:orientation="vertical">
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/white" />
-
     <androidx.cardview.widget.CardView
         android:id="@+id/item_card"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="@color/item_card_background"
+        android:backgroundTint="@color/card_color"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?android:attr/selectableItemBackground"
@@ -32,17 +27,43 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
                 android:text="Item Name"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
+                android:id="@+id/total_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/client"
                 android:layout_marginStart="5dp"
                 android:text="@string/total_price"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="normal|italic" />
+
+            <TextView
+                android:id="@+id/quantity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/client"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/total_price"
+                android:text="@string/total_price"
+                android:textColor="@color/black"
+                android:textSize="13sp"
+                android:textStyle="normal|italic" />
+
+
+            <TextView
+                android:id="@+id/unit_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/client"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/quantity"
+                android:text="@string/total_price"
+                android:textColor="@color/black"
                 android:textSize="13sp"
                 android:textStyle="normal|italic" />
 
@@ -55,7 +76,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:text="100$"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="normal" />
         </RelativeLayout>

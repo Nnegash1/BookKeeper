@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/invoice_background"
-    android:orientation="vertical">
+    android:background="@color/primary_color"
+    android:orientation="vertical"
+    tools:context="com.example.bookkeeper.presentation.view.FragmentItemPage"
+    >
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp">
@@ -18,39 +20,38 @@
             style="@style/TextAppearance.AppCompat.Large"
             android:layout_width="0dp"
             android:layout_height="50dp"
-            android:background="@color/invoice_background"
-            android:textAlignment="center"
+            android:background="@color/primary_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-            <ImageButton
+            <Button
                 android:layout_width="70dp"
                 android:layout_height="50dp"
                 android:layout_gravity="start"
-                android:backgroundTint="@color/invoice_background"
-                android:contentDescription="@string/back_button"
-                android:scaleType="fitCenter"
-                android:src="@drawable/ic_baseline_keyboard_backspace_24" />
-
+                android:backgroundTint="@color/primary_color"
+                android:textColor="@color/white"
+                android:text="@string/back_button"/>
             <TextView
                 android:id="@+id/back_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="start"
+                android:layout_gravity="center"
                 android:backgroundTint="@color/invoice_background"
                 android:text="@string/invoice"
                 android:textAllCaps="false"
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"
+                android:textSize="22sp" />
 
             <Button
                 android:id="@+id/submit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
-                android:backgroundTint="@color/invoice_background"
+                android:backgroundTint="@color/primary_color"
                 android:text="@string/save"
                 android:textAllCaps="false"
                 android:textColor="@color/white" />
@@ -64,10 +65,12 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-condensed"
+        android:backgroundTint="@color/card_color"
         android:text="@string/service"
         android:textAlignment="center"
+        android:textStyle="bold"
         android:textColor="@color/white"
-        android:textSize="19sp" />
+        android:textSize="30sp" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/description"
@@ -78,7 +81,7 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/description"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+        android:textColorHint="@android:color/darker_gray" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/brand"
@@ -89,7 +92,7 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/brand"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+         android:textColorHint="@android:color/darker_gray" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/origin"
@@ -100,7 +103,7 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/origin"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+         android:textColorHint="@android:color/darker_gray"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/hs_code"
@@ -111,7 +114,7 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/hs_code"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+         android:textColorHint="@android:color/darker_gray"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/item"
@@ -122,7 +125,7 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/Item"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+         android:textColorHint="@android:color/darker_gray"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/qty"
@@ -133,7 +136,7 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/qty"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+         android:textColorHint="@android:color/darker_gray"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/unit_price"
@@ -144,17 +147,6 @@
         android:layout_marginEnd="16dp"
         android:hint="@string/unit_price"
         android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
-
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/discount"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:hint="@string/discount"
-        android:textColor="@color/white"
-        android:textColorHint="@color/teal_700" />
+         android:textColorHint="@android:color/darker_gray" />
 
 </LinearLayout>

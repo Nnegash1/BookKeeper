@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/HomePageFragment">
+    app:startDestination="@id/homePageFragment2">
     <fragment
-        android:id="@+id/HomePageFragment"
-        android:name="com.example.bookkeeper.ui.main.HomePageFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_home_page">
+        android:id="@+id/homePageFragment2"
+        android:name="com.example.bookkeeper.presentation.view.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
         <action
-            android:id="@+id/action_HomePageFragment_to_fragmentInsertItem2"
-            app:destination="@id/fragmentInsertItem" />
+            android:id="@+id/action_homePageFragment2_to_fragmentInvoiceDetail3"
+            app:destination="@id/fragmentInvoiceDetail3" />
     </fragment>
     <fragment
-        android:id="@+id/fragmentInsertItem"
-        android:name="com.example.bookkeeper.ui.main.FragmentInvoiceDetail"
-        android:label="fragment_insert_item"
-        tools:layout="@layout/fragment_invoice_detail">
+        android:id="@+id/fragmentInvoiceDetail3"
+        android:name="com.example.bookkeeper.presentation.view.FragmentInvoiceDetail"
+        android:label="fragment_invoice_detail"
+        tools:layout="@layout/fragment_invoice_detail" >
         <action
-            android:id="@+id/action_fragmentInsertItem_to_fragment_Add_Item"
-            app:destination="@id/fragment_Add_Item" />
+            android:id="@+id/action_fragmentInvoiceDetail3_to_fragmentDetail"
+            app:destination="@id/fragmentDetail" />
         <action
-            android:id="@+id/action_fragmentInsertItem_to_fragment_add_client"
-            app:destination="@id/fragment_add_client" />
+            android:id="@+id/action_fragmentInvoiceDetail3_to_fragmentAddClient"
+            app:destination="@id/fragmentAddClient" />
+        <action
+            android:id="@+id/action_fragmentInvoiceDetail3_to_fragmentItemPage"
+            app:destination="@id/fragmentItemPage" />
     </fragment>
     <fragment
-        android:id="@+id/fragment_Add_Item"
-        android:name="com.example.bookkeeper.ui.main.FragmentItemPage"
-        android:label="fragment__add__item"
-        tools:layout="@layout/fragment_add_item" />
+        android:id="@+id/fragmentDetail"
+        android:name="com.example.bookkeeper.presentation.view.FragmentDetail"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" />
     <fragment
-        android:id="@+id/fragment_add_client"
-        android:name="com.example.bookkeeper.ui.main.FragmentAddClient"
+        android:id="@+id/fragmentAddClient"
+        android:name="com.example.bookkeeper.presentation.view.FragmentAddClient"
         android:label="fragment_add_client"
         tools:layout="@layout/fragment_add_client" />
+    <fragment
+        android:id="@+id/fragmentItemPage"
+        android:name="com.example.bookkeeper.presentation.view.FragmentItemPage"
+        android:label="fragment_add_item"
+        tools:layout="@layout/fragment_add_item" />
 </navigation>
