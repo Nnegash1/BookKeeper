@@ -4,7 +4,7 @@ import java.util.*
 
 
 data class InvoiceDetails(
-    val invoiceNumber: String = Random().nextLong().toString(),
+    val invoiceNumber: String = "",
     val issueDate: String = "",
     val discount: Double = 0.0,
     val percentDiscount: Double = 0.0,

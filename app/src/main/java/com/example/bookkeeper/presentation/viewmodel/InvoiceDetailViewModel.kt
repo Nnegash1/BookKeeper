@@ -1,8 +1,10 @@
 package com.example.bookkeeper.presentation.viewmodel
 
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.example.bookkeeper.data.data_source.entities.Client
 import com.example.bookkeeper.data.data_source.entities.Invoice
+import com.example.bookkeeper.data.data_source.entities.InvoiceDetails
 import com.example.bookkeeper.data.data_source.entities.Item
 import com.example.bookkeeper.data.data_source.repository.InvoiceRepository
 import com.example.bookkeeper.presentation.viewmodel.state.ClientFragmentState
@@ -10,6 +12,7 @@ import com.example.bookkeeper.presentation.viewmodel.state.InvoiceDetailState
 import com.example.bookkeeper.presentation.viewmodel.state.ItemScreenState
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 
 class InvoiceDetailViewModel : ViewModel() {
 
@@ -45,6 +48,10 @@ class InvoiceDetailViewModel : ViewModel() {
         if (invoice != null) {
             InvoiceRepository.addInvoice(invoice)
         }
+    }
+
+    fun detailUpdate(invoice: InvoiceDetails) = viewModelScope.launch {
+        _invoiceDetail.value = InvoiceDetailState(invoice)
     }
 
     fun clear() {

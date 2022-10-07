@@ -40,10 +40,17 @@ class FragmentInvoiceDetail : Fragment() {
             }
         }
 
+        viewLifecycleOwner.lifecycleScope.launchWhenResumed {
+            invoiceVM.invoiceDetail.collect {
+                binding.detail.text = it.invoice.invoiceNumber
+            }
+        }
+
         binding.saveInvoiceBtn.setOnClickListener {
             invoiceVM.addInvoice()
             invoiceVM.clear()
         }
+
         callTrace()
     }
 

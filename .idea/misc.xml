@@ -9,6 +9,12 @@
         <entry key="app/src/main/res/drawable/ic_baseline_newspaper_24.xml" value="0.2265" />
         <entry key="app/src/main/res/drawable/ic_baseline_view_headline_24.xml" value="0.1475" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1475" />
+        <entry key="app/src/main/res/layout-land/fragment_home_page.xml" value="0.1894243641231593" />
+        <entry key="app/src/main/res/layout-night/fragment_add_client.xml" value="0.19652777777777777" />
+        <entry key="app/src/main/res/layout-night/fragment_add_item.xml" value="0.19652777777777777" />
+        <entry key="app/src/main/res/layout-night/fragment_detail.xml" value="0.19652777777777777" />
+        <entry key="app/src/main/res/layout-night/fragment_home_page.xml" value="0.19652777777777777" />
+        <entry key="app/src/main/res/layout-night/fragment_invoice_detail.xml" value="0.19652777777777777" />
         <entry key="app/src/main/res/layout-v28/fragment_detail.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.2753962198893229" />
         <entry key="app/src/main/res/layout/bottom_navigation.xml" value="0.195526123046875" />
