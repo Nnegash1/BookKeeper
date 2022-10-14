@@ -1,20 +1,22 @@
-//package com.example.bookkeeper.model
-//
-//import android.arch.persistence.room.Dao
-//import android.arch.persistence.room.Delete
-//import android.arch.persistence.room.Insert
-//import android.arch.persistence.room.Query
-//import com.example.bookkeeper.model.data.InvoiceData
-//
-//@Dao
-//interface InvoiceDAO {
-//    @Insert
-//    fun insertAll(vararg users: InvoiceData)
-//
-//    @Delete
-//    fun delete(invoiceData: InvoiceData)
-//
-//    @Query("SELECT * FROM InvoiceData")
-//    fun getAllInvoice(): InvoiceData
-//
-//}
+package com.example.bookkeeper.data.data_source.local
+
+import androidx.room.Dao
+import androidx.room.Delete
+import androidx.room.Insert
+import androidx.room.Query
+import com.example.bookkeeper.data.data_source.entities.Invoice
+import com.example.bookkeeper.data.data_source.entities.InvoiceData
+import kotlinx.coroutines.flow.Flow
+
+
+@Dao
+interface InvoiceDAO {
+    @Insert
+    suspend fun insertAll(vararg users: Invoice)
+
+    @Delete
+    fun delete(invoice: Invoice)
+
+    @Query("Select * From Invoice")
+    fun getAllInvoice(): Flow<List<Invoice>>
+}

@@ -9,16 +9,23 @@ import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
-import com.example.bookkeeper.databinding.FragmentAddClientBinding
 import com.example.bookkeeper.data.data_source.entities.Client
+import com.example.bookkeeper.databinding.FragmentAddClientBinding
 import com.example.bookkeeper.presentation.viewmodel.ClientViewModel
 import com.example.bookkeeper.presentation.viewmodel.InvoiceDetailViewModel
+import com.example.bookkeeper.presentation.viewmodel.InvoiceViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class FragmentAddClient : Fragment() {
 
+    @Inject
+    lateinit var viewModelFactory: InvoiceViewModelFactory
+
     lateinit var binding: FragmentAddClientBinding
-    private val clientVM: ClientViewModel by viewModels()
-    private val invoiceDetails: InvoiceDetailViewModel by activityViewModels()
+    private val clientVM: ClientViewModel by viewModels { viewModelFactory }
+    private val invoiceDetails: InvoiceDetailViewModel by activityViewModels() { viewModelFactory }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

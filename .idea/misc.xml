@@ -4,33 +4,50 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_back_arrow.xml" value="0.233" />
+        <entry key="app/src/main/res/drawable/ic_back_button_svgrepo_com.xml" value="0.171" />
         <entry key="app/src/main/res/drawable/ic_baseline_keyboard_backspace_24.xml" value="0.1475" />
         <entry key="app/src/main/res/drawable/ic_baseline_more_horiz_24.xml" value="0.1475" />
         <entry key="app/src/main/res/drawable/ic_baseline_newspaper_24.xml" value="0.2265" />
         <entry key="app/src/main/res/drawable/ic_baseline_view_headline_24.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_dots_three.xml" value="0.1415" />
+        <entry key="app/src/main/res/drawable/ic_dots_three_night.xml" value="0.15" />
+        <entry key="app/src/main/res/drawable/ic_invoice_2.xml" value="0.233" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1475" />
+        <entry key="app/src/main/res/drawable/ic_right_chevron_arrow_round_icon.xml" value="0.14" />
+        <entry key="app/src/main/res/drawable/ic_right_chevron_arrow_round_icon_night.xml" value="0.15" />
         <entry key="app/src/main/res/layout-land/fragment_home_page.xml" value="0.1894243641231593" />
+        <entry key="app/src/main/res/layout-night/client_information.xml" value="0.19652777777777777" />
         <entry key="app/src/main/res/layout-night/fragment_add_client.xml" value="0.19652777777777777" />
         <entry key="app/src/main/res/layout-night/fragment_add_item.xml" value="0.19652777777777777" />
+        <entry key="app/src/main/res/layout-night/fragment_client_information.xml" value="0.18645833333333334" />
         <entry key="app/src/main/res/layout-night/fragment_detail.xml" value="0.19652777777777777" />
         <entry key="app/src/main/res/layout-night/fragment_home_page.xml" value="0.19652777777777777" />
         <entry key="app/src/main/res/layout-night/fragment_invoice_detail.xml" value="0.19652777777777777" />
+        <entry key="app/src/main/res/layout-night/invoice_card.xml" value="0.165" />
         <entry key="app/src/main/res/layout-v28/fragment_detail.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.2753962198893229" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.17337341308593748" />
         <entry key="app/src/main/res/layout/bottom_navigation.xml" value="0.195526123046875" />
+        <entry key="app/src/main/res/layout/client_information.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/dialog_fragment.xml" value="0.23975409836065573" />
         <entry key="app/src/main/res/layout/fragment__add__item.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/fragment__invoice__detail.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/fragment_add_client.xml" value="0.2671875" />
         <entry key="app/src/main/res/layout/fragment_add_item.xml" value="0.19519519519519518" />
+        <entry key="app/src/main/res/layout/fragment_alert_dialog.xml" value="0.18645833333333334" />
         <entry key="app/src/main/res/layout/fragment_client_detail.xml" value="0.2947916666666667" />
+        <entry key="app/src/main/res/layout/fragment_client_information.xml" value="0.18645833333333334" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.14019927978515626" />
+        <entry key="app/src/main/res/layout/fragment_home_page.xml" value="0.21130889892578125" />
         <entry key="app/src/main/res/layout/fragment_insert_item.xml" value="0.31806640625000004" />
-        <entry key="app/src/main/res/layout/fragment_invoice_detail.xml" value="0.18305053710937502" />
+        <entry key="app/src/main/res/layout/fragment_invoice_detail.xml" value="0.22076568603515634" />
         <entry key="app/src/main/res/layout/fragment_invoice_detail2.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/fragment_main.xml" value="0.24512023925781257" />
-        <entry key="app/src/main/res/layout/invoice_card.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/item_card.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_preview_page.xml" value="0.24193115234375004" />
+        <entry key="app/src/main/res/layout/invoice_card.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/invoice_preview_card.xml" value="0.19583333333333333" />
+        <entry key="app/src/main/res/layout/item_card.xml" value="0.165" />
+        <entry key="app/src/main/res/layout/preview_layout.xml" value="0.25" />
         <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.29375" />
       </map>
     </option>
@@ -40,5 +57,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.19652777777777777" />
+      </ProjectState>
+    </option>
   </component>
 </project>

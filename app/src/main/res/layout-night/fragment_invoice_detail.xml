@@ -212,7 +212,7 @@
                 android:layout_marginTop="9dp"
                 android:layout_marginEnd="9dp"
                 android:layout_marginBottom="9dp"
-                tools:listitem="@layout/invoice_card" />
+                tools:listitem="@layout/item_card" />
 
             <ImageView
                 android:id="@+id/add_item_button"

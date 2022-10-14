@@ -1,32 +1,18 @@
-//package com.example.bookkeeper.model
-//
-//import android.arch.persistence.room.Database
-//import android.arch.persistence.room.Room
-//import android.arch.persistence.room.RoomDatabase
-//import android.content.Context
-//import com.example.bookkeeper.model.data.InvoiceData
-//
-//@Database(entities = [InvoiceData::class], version = 1, exportSchema = false)
-//abstract class InvoiceDataBase : RoomDatabase() {
-//    abstract fun getDao(): InvoiceDAO
-//
-//    companion object {
-//        private const val INVOICE_NAME = "InvoiceTable.db"
-//        private var dbInstance: InvoiceDataBase? = null
-//
-//        fun getInstance(context: Context): InvoiceDataBase {
-//            return dbInstance ?: synchronized(this) {
-//                dbInstance ?: createDB(context).also {
-//                    dbInstance = it
-//                }
-//            }
-//        }
-//
-//        private fun createDB(context: Context): InvoiceDataBase {
-//            return Room.databaseBuilder(
-//                context.applicationContext, InvoiceDataBase::class.java,
-//                INVOICE_NAME
-//            ).build()
-//        }
-//    }
-//}
+package com.example.bookkeeper.data.data_source.local
+
+
+import androidx.room.Database
+import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.example.bookkeeper.data.data_source.entities.Invoice
+import com.example.bookkeeper.data.data_source.entities.InvoiceTypeConverter
+
+@Database(entities = [Invoice::class], version = 1, exportSchema = false)
+@TypeConverters(InvoiceTypeConverter::class)
+abstract class InvoiceDataBase : RoomDatabase() {
+    abstract fun getDao(): InvoiceDAO
+
+    companion object {
+        const val INVOICE_NAME = "InvoiceTable.db"
+    }
+}

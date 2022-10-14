@@ -11,8 +11,17 @@
         android:label="fragment_home_page"
         tools:layout="@layout/fragment_home_page" >
         <action
+            android:id="@+id/action_homePageFragment2_to_clientInformation"
+            app:destination="@id/clientInformation" />
+        <action
+            android:id="@+id/action_homePageFragment2_to_fragmentAlertDialog"
+            app:destination="@id/fragmentAlertDialog" />
+        <action
             android:id="@+id/action_homePageFragment2_to_fragmentInvoiceDetail3"
             app:destination="@id/fragmentInvoiceDetail3" />
+        <action
+            android:id="@+id/action_homePageFragment2_to_previewPage"
+            app:destination="@id/previewPage" />
     </fragment>
     <fragment
         android:id="@+id/fragmentInvoiceDetail3"
@@ -44,4 +53,19 @@
         android:name="com.example.bookkeeper.presentation.view.FragmentItemPage"
         android:label="fragment_add_item"
         tools:layout="@layout/fragment_add_item" />
+    <fragment
+        android:id="@+id/fragmentAlertDialog"
+        android:name="com.example.bookkeeper.presentation.view.FragmentAlertDialog"
+        android:label="fragment_alert_dialog"
+        tools:layout="@layout/fragment_alert_dialog" />
+    <fragment
+        android:id="@+id/previewPage"
+        android:name="com.example.bookkeeper.presentation.view.PreviewPage"
+        android:label="fragment_preview_page"
+        tools:layout="@layout/fragment_preview_page" />
+    <fragment
+        android:id="@+id/clientInformation"
+        android:name="com.example.bookkeeper.presentation.view.ClientInformation"
+        android:label="fragment_client_information"
+        tools:layout="@layout/fragment_client_information" />
 </navigation>

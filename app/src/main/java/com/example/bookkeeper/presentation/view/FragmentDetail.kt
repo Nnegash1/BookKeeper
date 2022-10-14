@@ -2,12 +2,10 @@ package com.example.bookkeeper.presentation.view
 
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.text.set
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
@@ -17,17 +15,18 @@ import com.example.bookkeeper.data.data_source.entities.InvoiceDetails
 import com.example.bookkeeper.databinding.FragmentDetailBinding
 import com.example.bookkeeper.presentation.viewmodel.DetailPageViewModel
 import com.example.bookkeeper.presentation.viewmodel.InvoiceDetailViewModel
-import com.example.bookkeeper.presentation.viewmodel.state.DetailState
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.collectLatest
-import java.text.SimpleDateFormat
-import java.util.*
+import com.example.bookkeeper.presentation.viewmodel.InvoiceViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class FragmentDetail : Fragment() {
 
+    @Inject
+    lateinit var viewModelFactory: InvoiceViewModelFactory
     private lateinit var binding: FragmentDetailBinding
-    private val detailPageViewModel by viewModels<DetailPageViewModel>()
-    private val invoiceVM by activityViewModels<InvoiceDetailViewModel>()
+    private val detailPageViewModel by viewModels<DetailPageViewModel> { viewModelFactory }
+    private val invoiceVM by activityViewModels<InvoiceDetailViewModel> { viewModelFactory }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?

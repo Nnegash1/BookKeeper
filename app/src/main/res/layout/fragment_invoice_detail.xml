@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/primary_color"
+
     android:orientation="vertical"
     tools:context=".presentation.view.FragmentInvoiceDetail">
 
@@ -46,8 +47,8 @@
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:text="@string/save"
-            android:textStyle="bold"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textStyle="bold" />
     </LinearLayout>
 
 
@@ -171,58 +172,48 @@
         android:layout_marginEnd="16dp"
         android:background="@color/white" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/item_card"
+
+    <RelativeLayout
+        android:id="@+id/add_item"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/primary_color"
-        android:clickable="true"
-        android:focusable="true">
+        android:layout_marginBottom="16dp">
 
-        <RelativeLayout
-            android:id="@+id/add_item"
+        <TextView
+            android:id="@+id/item"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="9dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:text="@string/add_item"
+            android:textColor="@color/white"
+            android:textSize="17sp"
+            android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/item"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="9dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="9dp"
-                android:layout_marginBottom="9dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:text="@string/add_item"
-                android:textColor="@color/white"
-                android:textSize="17sp"
-                android:textStyle="bold" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/item_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/item"
+            android:layout_marginStart="9dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginEnd="9dp"
+            android:layout_marginBottom="9dp"
+            tools:listitem="@layout/item_card" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/item_recycler"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/item"
-                android:layout_marginStart="9dp"
-                android:layout_marginTop="9dp"
-                android:layout_marginEnd="9dp"
-                android:layout_marginBottom="9dp"
-                tools:listitem="@layout/invoice_card" />
+        <ImageView
+            android:id="@+id/add_item_button"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_alignEnd="@+id/item"
+            android:contentDescription="@string/vector"
+            android:src="@android:drawable/ic_menu_add" />
+    </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/add_item_button"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:layout_alignEnd="@+id/item"
-                android:contentDescription="@string/vector"
-                android:src="@android:drawable/ic_menu_add" />
-        </RelativeLayout>
-
-
-    </com.google.android.material.card.MaterialCardView>
 </LinearLayout>

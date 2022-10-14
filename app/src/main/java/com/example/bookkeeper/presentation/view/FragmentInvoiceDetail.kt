@@ -12,12 +12,18 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bookkeeper.databinding.FragmentInvoiceDetailBinding
 import com.example.bookkeeper.presentation.view.adapter.ItemAdapter
 import com.example.bookkeeper.presentation.viewmodel.InvoiceDetailViewModel
+import com.example.bookkeeper.presentation.viewmodel.InvoiceViewModelFactory
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class FragmentInvoiceDetail : Fragment() {
 
+    @Inject
+    lateinit var viewModelFactory: InvoiceViewModelFactory
     private lateinit var binding: FragmentInvoiceDetailBinding
     private val itemAdapter = ItemAdapter()
-    private val invoiceVM: InvoiceDetailViewModel by activityViewModels()
+    private val invoiceVM: InvoiceDetailViewModel by activityViewModels { viewModelFactory }
 
 
     override fun onCreateView(

@@ -11,7 +11,7 @@
     <string name="description">1200R20 668 22PR</string>
     <string name="brand">Triangle</string>
     <string name="origin">china</string>
-    <string name="save">Save</string>
+    <string name="save">Submit</string>
     <string name="hs_code">HS_CODE</string>
     <string name="title">New Item</string>
     <string name="Item">item</string>
@@ -22,7 +22,7 @@
     <string name="back_button">Back</string>
     <string name="invoice">Invoice</string>
     <string name="service">Service</string>
-    <string name="discount">Discount</string>
+    <string name="discount">Discount (%)</string>
     <string name="todo">TODO</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -39,7 +39,7 @@
     <string name="phone">phone</string>
     <string name="invoice_detail">Invoice Detail</string>
     <string name="naj_003">NAJ-003</string>
-    <string name="invoice_number">Invoice Number</string>
+    <string name="invoice_number">#INV_0001</string>
     <string name="oct_4_2022">Oct 4, 2022</string>
     <string name="dollar">Dollar $</string>
     <string name="percent">percent %</string>
@@ -48,4 +48,14 @@
     <string name="_000000001">000000001</string>
     <string name="o9_4_2022">O9/4/2022</string>
     <string name="issue_date">Issue Date</string>
+    <string name="subtotal">Subtotal</string>
+    <string name="from">From</string>
+    <string name="business_name">Business Name</string>
+    <string name="name_gmail_com">name@gmail.com</string>
+    <string name="street_address">Street Address</string>
+    <string name="state_country">State, Country</string>
+    <string name="_for">For</string>
+    <string name="due_date">due date</string>
+    <string name="description_">Description</string>
+    <string name="balance_due">Balance Due</string>
 </resources>

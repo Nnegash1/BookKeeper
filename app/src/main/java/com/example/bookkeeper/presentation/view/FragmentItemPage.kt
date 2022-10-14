@@ -13,13 +13,19 @@ import androidx.navigation.fragment.findNavController
 import com.example.bookkeeper.data.data_source.entities.Item
 import com.example.bookkeeper.databinding.FragmentAddItemBinding
 import com.example.bookkeeper.presentation.viewmodel.InvoiceDetailViewModel
+import com.example.bookkeeper.presentation.viewmodel.InvoiceViewModelFactory
 import com.example.bookkeeper.presentation.viewmodel.ItemPageViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class FragmentItemPage : Fragment() {
 
+    @Inject
+    lateinit var viewModelFactory: InvoiceViewModelFactory
     private lateinit var binding: FragmentAddItemBinding
-    private val itemPageViewModel: ItemPageViewModel by viewModels()
-    private val invoiceVm: InvoiceDetailViewModel by activityViewModels()
+    private val itemPageViewModel: ItemPageViewModel by viewModels { viewModelFactory }
+    private val invoiceVm: InvoiceDetailViewModel by activityViewModels { viewModelFactory }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

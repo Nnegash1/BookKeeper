@@ -6,17 +6,19 @@ import com.example.bookkeeper.data.data_source.entities.Client
 import com.example.bookkeeper.data.data_source.entities.Invoice
 import com.example.bookkeeper.data.data_source.entities.InvoiceDetails
 import com.example.bookkeeper.data.data_source.entities.Item
-import com.example.bookkeeper.data.data_source.repository.InvoiceRepository
+import com.example.bookkeeper.data.data_source.local.itemContainer
+import com.example.bookkeeper.domain.repository.InvoiceRepository
 import com.example.bookkeeper.presentation.viewmodel.state.ClientFragmentState
 import com.example.bookkeeper.presentation.viewmodel.state.InvoiceDetailState
 import com.example.bookkeeper.presentation.viewmodel.state.ItemScreenState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class InvoiceDetailViewModel : ViewModel() {
+class InvoiceDetailViewModel @Inject constructor(private val repo: InvoiceRepository) : ViewModel() {
 
-    private val itemContainer: MutableList<Item> = mutableListOf()
     private val _client: MutableStateFlow<ClientFragmentState> =
         MutableStateFlow(ClientFragmentState())
     private val _invoiceDetail: MutableStateFlow<InvoiceDetailState> =
@@ -37,7 +39,7 @@ class InvoiceDetailViewModel : ViewModel() {
         _item.value = ItemScreenState(itemContainer)
     }
 
-    fun addInvoice() {
+    fun addInvoice() = viewModelScope.launch {
         val invoice = client.value.client?.let {
             Invoice(
                 client = it,
@@ -46,7 +48,7 @@ class InvoiceDetailViewModel : ViewModel() {
             )
         }
         if (invoice != null) {
-            InvoiceRepository.addInvoice(invoice)
+            repo.addInvoice(invoice)
         }
     }
 
