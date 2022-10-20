@@ -52,9 +52,9 @@ class InvoiceCardViewHolder(
     fun display(card: Invoice) {
         with(binding) {
             client.text = card.client.name
-            invoiceNumber.text = card.invoiceDetails.invoiceNumber
+            invoiceNumber.text = card.invoiceDetails.referenceNo.toString()
             dueDate.text = card.invoiceDetails.issueDate
-            card.item.forEach { item ->
+            card.item?.forEach { item ->
                 Log.d("TAG", "display: ${item.unit_price}")
             }.toString()
         }

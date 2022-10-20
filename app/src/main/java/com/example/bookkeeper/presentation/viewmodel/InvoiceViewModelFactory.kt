@@ -31,6 +31,10 @@ class InvoiceViewModelFactory @Inject constructor(private val repo: InvoiceRepos
                 @Suppress("UNCHECKED_CAST")
                 ItemPageViewModel(repo) as T
             }
+            ClientInformationViewModel::class.java.simpleName -> {
+                @Suppress("UNCHECKED_CAST")
+                ClientInformationViewModel(repo) as T
+            }
             else -> {
                 throw IllegalArgumentException("ViewModel Not compatible")
             }

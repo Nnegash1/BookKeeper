@@ -17,6 +17,7 @@ import com.example.bookkeeper.presentation.viewmodel.DetailPageViewModel
 import com.example.bookkeeper.presentation.viewmodel.InvoiceDetailViewModel
 import com.example.bookkeeper.presentation.viewmodel.InvoiceViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
+import java.util.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -41,6 +42,7 @@ class FragmentDetail : Fragment() {
                     invoiceNumber.setText(it.invoiceDetail.invoiceNumber)
                     issueDate.setText(it.invoiceDetail.issueDate)
                     discountAmount.setText(it.invoiceDetail.discount.toString())
+                    referenceNumber.text = Random().nextLong().toString()
                 }
                 invoiceVM.detailUpdate(it.invoiceDetail)
             }

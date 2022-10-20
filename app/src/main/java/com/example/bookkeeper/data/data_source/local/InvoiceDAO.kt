@@ -1,11 +1,7 @@
 package com.example.bookkeeper.data.data_source.local
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
-import com.example.bookkeeper.data.data_source.entities.Invoice
-import com.example.bookkeeper.data.data_source.entities.InvoiceData
+import androidx.room.*
+import com.example.bookkeeper.data.data_source.entities.*
 import kotlinx.coroutines.flow.Flow
 
 
@@ -15,8 +11,9 @@ interface InvoiceDAO {
     suspend fun insertAll(vararg users: Invoice)
 
     @Delete
-    fun delete(invoice: Invoice)
+    suspend fun delete(invoice: Invoice)
 
     @Query("Select * From Invoice")
     fun getAllInvoice(): Flow<List<Invoice>>
+
 }

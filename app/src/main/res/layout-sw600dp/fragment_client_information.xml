@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -26,6 +27,20 @@
             android:textColor="@color/black"
             android:textSize="35sp"
             android:textStyle="bold" />
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginStart="200dp"
+
+            android:layout_marginBottom="30dp"
+            android:backgroundTint="#2090FF"
+            android:clickable="true"
+            android:focusable="true"
+            app:rippleColor="@color/white"
+            app:srcCompat="@android:drawable/ic_input_delete"
+            tools:ignore="ContentDescription" />
     </LinearLayout>
 
 
@@ -50,8 +65,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/black"
-        app:cardCornerRadius="20dp"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="20dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -64,36 +79,13 @@
 
 
             <TextView
-                android:id="@+id/client_name_static"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/client_name"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
-
-            <TextView
                 android:id="@+id/client_name"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginEnd="16dp"
-                android:layout_toEndOf="@+id/client_name_static"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/client_email_static"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/client_name"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="16dp"
-                android:text="@string/email"
+                android:text="@string/client_name"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
@@ -105,32 +97,18 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="16dp"
-                android:layout_toEndOf="@+id/client_name_static"
+                android:text="@string/email"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/phone_number_static"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/client_email"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="60dp"
-                android:text="@string/phone"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
-
-
-            <TextView
-                android:id="@+id/phone_number"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/client_email"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="16dp"
-                android:layout_toEndOf="@+id/phone_number_static"
+                android:text="@string/phone"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
@@ -270,8 +248,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:backgroundTint="@color/black"
-        app:cardCornerRadius="20dp"
-        app:cardUseCompatPadding="true">
+        app:cardUseCompatPadding="true"
+        app:cardCornerRadius="20dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -371,17 +349,4 @@
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="30dp"
-        android:backgroundTint="#2090FF"
-        android:clickable="true"
-        android:focusable="true"
-        app:rippleColor="@color/white"
-        app:srcCompat="@android:drawable/ic_input_delete"
-        tools:ignore="ContentDescription" />
 </LinearLayout>

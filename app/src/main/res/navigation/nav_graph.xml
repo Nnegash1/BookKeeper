@@ -67,5 +67,9 @@
         android:id="@+id/clientInformation"
         android:name="com.example.bookkeeper.presentation.view.ClientInformation"
         android:label="fragment_client_information"
-        tools:layout="@layout/fragment_client_information" />
+        tools:layout="@layout/fragment_client_information" >
+        <argument
+            android:name="invoice_number"
+            app:argType="long" />
+    </fragment>
 </navigation>

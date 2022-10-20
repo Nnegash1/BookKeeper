@@ -17,7 +17,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class InvoiceDetailViewModel @Inject constructor(private val repo: InvoiceRepository) : ViewModel() {
+class InvoiceDetailViewModel @Inject constructor(private val repo: InvoiceRepository) :
+    ViewModel() {
 
     private val _client: MutableStateFlow<ClientFragmentState> =
         MutableStateFlow(ClientFragmentState())
@@ -60,5 +61,4 @@ class InvoiceDetailViewModel @Inject constructor(private val repo: InvoiceReposi
         itemContainer.clear()
         _item.value = ItemScreenState(itemContainer)
     }
-
 }
