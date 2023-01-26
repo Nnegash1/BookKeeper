@@ -52,7 +52,7 @@
         android:clickable="true"
         android:focusable="true"
         app:rippleColor="@color/white"
-        app:srcCompat="@android:drawable/ic_menu_send"
+        app:srcCompat="@android:drawable/ic_menu_add"
         tools:ignore="ContentDescription" />
 
 </RelativeLayout>
