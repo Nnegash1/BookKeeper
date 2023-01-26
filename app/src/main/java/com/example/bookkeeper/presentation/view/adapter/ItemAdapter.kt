@@ -4,10 +4,11 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.bookkeeper.data.data_source.entities.Invoice
 import com.example.bookkeeper.databinding.ItemCardBinding
 import com.example.bookkeeper.data.data_source.entities.Item
 
-class ItemAdapter : RecyclerView.Adapter<ItemCardHolder>() {
+class ItemAdapter() : RecyclerView.Adapter<ItemCardHolder>() {
     private val itemData: MutableList<Item> = mutableListOf()
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemCardHolder {
         return ItemCardHolder(

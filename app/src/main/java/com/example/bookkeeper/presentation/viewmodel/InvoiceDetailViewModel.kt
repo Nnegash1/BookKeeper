@@ -6,12 +6,12 @@ import com.example.bookkeeper.data.data_source.entities.Client
 import com.example.bookkeeper.data.data_source.entities.Invoice
 import com.example.bookkeeper.data.data_source.entities.InvoiceDetails
 import com.example.bookkeeper.data.data_source.entities.Item
-import com.example.bookkeeper.data.data_source.local.itemContainer
 import com.example.bookkeeper.domain.repository.InvoiceRepository
 import com.example.bookkeeper.presentation.viewmodel.state.ClientFragmentState
 import com.example.bookkeeper.presentation.viewmodel.state.InvoiceDetailState
 import com.example.bookkeeper.presentation.viewmodel.state.ItemScreenState
 import dagger.hilt.android.lifecycle.HiltViewModel
+import itemContainer
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
@@ -44,7 +44,7 @@ class InvoiceDetailViewModel @Inject constructor(private val repo: InvoiceReposi
         val invoice = client.value.client?.let {
             Invoice(
                 client = it,
-                item = item.value.item,
+                item = item.value.item.toList(),
                 invoiceDetails = invoiceDetail.value.invoice
             )
         }

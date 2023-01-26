@@ -1,55 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/background_dark"
+    android:background="@color/white"
     android:orientation="vertical"
     tools:context="com.example.bookkeeper.presentation.view.FragmentDetail">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp">
-
-        <Toolbar
-            style="@style/TextAppearance.AppCompat.Large"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:background="@color/black"
-            android:textAlignment="center"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-
-            <ImageButton
-                android:id="@+id/cancel_button"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="start"
-                android:backgroundTint="@color/black"
-                android:src="@drawable/ic_back_arrow"
-                android:text="@string/save" />
-
-            <TextView
-                android:id="@+id/back_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:backgroundTint="@color/invoice_background"
-                android:text="@string/invoice"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textSize="30sp"
-                android:textStyle="bold" />
-
-
-        </Toolbar>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        android:gravity="center"
+        android:text="@string/invoice_detail"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/invoice_number_static"
@@ -61,7 +28,7 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/invoice_number"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -75,8 +42,7 @@
         android:layout_marginEnd="16dp"
         android:layout_toEndOf="@+id/invoice_number_static"
         android:hint="@string/naj_003"
-        android:textColor="@color/white"
-        android:textColorHint="@color/secondary_color_variant" />
+        android:textColor="@color/black" />
 
     <View
         android:layout_width="match_parent"
@@ -84,7 +50,6 @@
         android:layout_below="@+id/invoice_number"
         android:layout_marginTop="10dp"
         android:background="#C3C0C0" />
-
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/issue_date_static"
@@ -95,8 +60,8 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-condensed"
-        android:text="@string/issue_date"
-        android:textColor="@color/white"
+        android:text="@string/due_date"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -110,24 +75,23 @@
         android:layout_marginEnd="16dp"
         android:layout_toEndOf="@+id/invoice_number_static"
         android:text="@string/o9_4_2022"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <DatePicker
         android:id="@+id/date_picker_actions"
         android:layout_width="wrap_content"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:layout_below="@id/issue_date"
         android:layout_alignParentStart="true"
         android:layout_marginStart="16dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="16dp"
         android:layout_toEndOf="@+id/issue_date"
-        android:background="@color/invoice_background"
+        android:background="@color/white"
         android:calendarViewShown="false"
         android:datePickerMode="spinner"
         android:yearListSelectorColor="@color/white" />
-
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/discount"
@@ -139,10 +103,9 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/discount"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
-
 
     <RadioButton
         android:id="@+id/dollar"
@@ -151,18 +114,16 @@
         android:layout_below="@id/date_picker_actions"
         android:layout_marginStart="0dp"
         android:layout_marginTop="35dp"
-
         android:layout_marginEnd="16dp"
         android:layout_toEndOf="@id/discount"
-        android:background="@android:color/background_dark"
         android:checked="true"
         android:clickable="true"
-
         android:focusable="true"
+        android:buttonTintMode="@color/black"
         android:fontFamily="sans-serif-condensed"
         android:shadowRadius="@integer/material_motion_duration_short_1"
         android:text="@string/dollar"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <RadioButton
         android:id="@+id/percent"
@@ -173,31 +134,27 @@
         android:layout_marginTop="35dp"
 
         android:layout_toEndOf="@id/dollar"
-        android:background="@android:color/background_dark"
         android:clickable="true"
-
+        android:buttonTintMode="@color/black"
         android:focusable="true"
         android:fontFamily="sans-serif-condensed"
         android:shadowRadius="@integer/material_motion_duration_short_1"
         android:text="@string/percent"
-        android:textColor="@color/white" />
+        android:textColor="@color/black" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/discount_amount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/date_picker_actions"
+        android:layout_below="@id/discount"
         android:layout_marginStart="16dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="16dp"
-        android:layout_toEndOf="@+id/percent"
-
         android:hint="@string/_0_00"
-        android:textColor="@color/white"
-        android:textColorHint="@color/secondary_color_variant" />
+        android:textColor="@color/black" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/reference_number"
+        android:id="@+id/reference_number_auto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/discount_amount"
@@ -206,22 +163,22 @@
         android:layout_marginEnd="16dp"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/reference_no"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/reference_number_auto"
+        android:id="@+id/reference_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/discount_amount"
         android:layout_marginStart="16dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="16dp"
-        android:layout_toEndOf="@+id/reference_number"
+        android:layout_toEndOf="@+id/reference_number_auto"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/_000000001"
-        android:textColor="@color/white"
+        android:textColor="@color/black"
         android:textSize="20sp" />
 
     <androidx.cardview.widget.CardView
@@ -230,20 +187,20 @@
         android:layout_below="@id/reference_number_auto"
         android:layout_gravity="center"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
         android:layout_marginEnd="15dp"
-        app:cardBackgroundColor="@color/white"
+        app:cardBackgroundColor="@color/black"
         app:cardCornerRadius="20dp">
 
         <TextView
             android:id="@+id/submit"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_gravity="center"
             android:gravity="center"
             android:text="@string/save"
             android:textAlignment="center"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textStyle="bold" />
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

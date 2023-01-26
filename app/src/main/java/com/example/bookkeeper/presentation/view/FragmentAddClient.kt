@@ -22,7 +22,6 @@ class FragmentAddClient : Fragment() {
 
     @Inject
     lateinit var viewModelFactory: InvoiceViewModelFactory
-
     lateinit var binding: FragmentAddClientBinding
     private val clientVM: ClientViewModel by viewModels { viewModelFactory }
     private val invoiceDetails: InvoiceDetailViewModel by activityViewModels() { viewModelFactory }
@@ -45,14 +44,19 @@ class FragmentAddClient : Fragment() {
                 it.client?.let { it1 -> invoiceDetails.clientUpdate(it1) }
             }
         }
+        binding.backButton.setOnClickListener {
+          findNavController().popBackStack()
+        }
     }
 
     private fun addNewClient(): Client {
-
+        val phone = binding.phoneNumber.let {
+            it.text.toString().format("{0:(###) ###-####}")
+        }
         val client = with(binding) {
             Client(
                 name = clientName.text.toString(),
-                phoneNumber = phoneNumber.text.toString(),
+                phoneNumber = phone,
                 email = email.text.toString(),
                 country = country.text.toString(),
                 street = street.text.toString(),

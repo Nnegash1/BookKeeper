@@ -17,18 +17,18 @@
     <string name="Item">item</string>
     <string name="qty">qty</string>
     <string name="unit_price">unit price</string>
-    <string name="total_price">Total Price :</string>
+    <string name="total_price">Total Price $ :</string>
     <string name="DollarSign">$</string>
     <string name="back_button">Back</string>
     <string name="invoice">Invoice</string>
     <string name="service">Service</string>
-    <string name="discount">Discount (%)</string>
+    <string name="discount">Discount :</string>
     <string name="todo">TODO</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="cancel">Cancel</string>
-    <string name="client_name">Client Name</string>
-    <string name="email">Email</string>
+    <string name="client_name">Client Name : </string>
+    <string name="email">Email :</string>
     <string name="address">Address</string>
     <string name="country">Country</string>
     <string name="street">Street</string>
@@ -36,10 +36,10 @@
     <string name="postal_code">Postal Code</string>
     <string name="city">City</string>
     <string name="province_state">Province/State</string>
-    <string name="phone">phone</string>
+    <string name="phone">phone :</string>
     <string name="invoice_detail">Invoice Detail</string>
     <string name="naj_003">NAJ-003</string>
-    <string name="invoice_number">#INV_0001</string>
+    <string name="invoice_number">Invoice Number</string>
     <string name="oct_4_2022">Oct 4, 2022</string>
     <string name="dollar">Dollar $</string>
     <string name="percent">percent %</string>
@@ -47,7 +47,7 @@
     <string name="reference_no">Reference No :</string>
     <string name="_000000001">000000001</string>
     <string name="o9_4_2022">O9/4/2022</string>
-    <string name="issue_date">Issue Date</string>
+    <string name="issue_date">Issue Date :</string>
     <string name="subtotal">Subtotal</string>
     <string name="from">From</string>
     <string name="business_name">Business Name</string>
@@ -55,7 +55,11 @@
     <string name="street_address">Street Address</string>
     <string name="state_country">State, Country</string>
     <string name="_for">For</string>
-    <string name="due_date">due date</string>
+    <string name="due_date">Due date : </string>
     <string name="description_">Description</string>
-    <string name="balance_due">Balance Due</string>
+    <string name="balance_due">Balance Due : </string>
+    <string name="contact_information">Contact Information</string>
+    <string name="set_the_date">Set the Date</string>
+    <string name="submit">Submit</string>
+    <string name="terms_and_conditions_n_payment_n_shipment_n_destination_n_port_of_loading_insurance_validity_n_banker_n_account_no_n_iban_no_n_swift_code_n_bank_routing_code_n_cad_lc_n_by_sea_ethiopian_shipping_lines_n_via_dibouti_commet_mojo_dry_port_gelan_any_uae_port_n_covered_by_buyer_n_30_days_n_mashreq_bank_muraqabat_branch_najmat_al_raad_tyres_trading_llc_019100855652_n_ae590330000019100855652_n_bomlaead_n_203320101_n_dubai_u_a_e">TERMS and CONDITIONS\n PAYMENT: \n SHIPMENT:\n DESTINATION:\n PORT OF LOADING: INSURANCE: VALIDITY:\n BANKER: \n ACCOUNT NO:\n IBAN NO:\n SWIFT CODE: \n BANK ROUTING CODE: \n CAD/LC: \n BY SEA, ETHIOPIAN SHIPPING LINES: \n VIA DIBOUTI COMMET/MOJO DRY PORT/ GELAN ANY UAE PORT:\n COVERED BY BUYER: \n 30 DAYS:\n MASHREQ BANK,MURAQABAT BRANCH NAJMAT AL RAAD TYRES TRADING LLC ,019100855652\n AE590330000019100855652\n BOMLAEAD\n 203320101\n DUBAI U.A.E</string>
 </resources>

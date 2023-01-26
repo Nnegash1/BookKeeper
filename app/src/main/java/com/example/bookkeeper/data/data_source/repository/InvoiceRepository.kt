@@ -1,21 +1,25 @@
 package com.example.bookkeeper.data.data_source.repository
 
-import android.util.Log
-import com.example.bookkeeper.data.data_source.entities.*
+import com.example.bookkeeper.data.data_source.entities.Invoice
 import com.example.bookkeeper.data.data_source.local.InvoiceDAO
 import com.example.bookkeeper.domain.repository.InvoiceRepository
-import kotlinx.coroutines.*
-import kotlinx.coroutines.flow.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 class InvoiceRepository @Inject constructor(private val db: InvoiceDAO) : InvoiceRepository {
 
-    override suspend fun getAllInvoice(): Flow<List<Invoice>> = db.getAllInvoice()
+    override suspend fun getAllInvoice(): Flow<List<Invoice>> =
+        withContext(Dispatchers.Default) { db.getAllInvoice() }
 
     override suspend fun addInvoice(invoice: Invoice) =
         withContext(Dispatchers.Default) { db.insertAll(invoice) }
 
-    override suspend fun deleteInvoice(invoice: Invoice) = db.delete(invoice)
+    override suspend fun deleteInvoice(invoice: Invoice) =
+        withContext(Dispatchers.Default) { db.delete(invoice) }
 
     override suspend fun filterInvoiceByClientName(client: String): List<Invoice> {
         val result: List<Invoice>
@@ -26,16 +30,7 @@ class InvoiceRepository @Inject constructor(private val db: InvoiceDAO) : Invoic
                     it.client.name == client
                 }
             }.first()
-
-            Log.d(
-                InvoiceRepository::class.java.simpleName, "filterInvoiceByClientName: ${
-                    result.map { list_ ->
-                        list_.client.name
-                    }
-                }"
-            )
         }
-
         return result
     }
 
@@ -48,18 +43,7 @@ class InvoiceRepository @Inject constructor(private val db: InvoiceDAO) : Invoic
                     it.invoiceDetails.referenceNo == ref_no
                 }
             }.first()
-
-            Log.d(
-                InvoiceRepository::class.java.simpleName, "Filter By ref No: ${
-                    result.map { list_ ->
-                        list_.client.name
-                    }
-                }"
-            )
         }
-
         return result
     }
-
-
 }

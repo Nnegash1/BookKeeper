@@ -41,7 +41,6 @@
                 android:layout_marginStart="5dp"
                 android:text="@string/total_price"
                 android:textColor="@color/black"
-                android:textSize="13sp"
                 android:textStyle="normal|italic" />
 
             <TextView
@@ -53,7 +52,6 @@
                 android:layout_toEndOf="@+id/total_price"
                 android:text="@string/total_price"
                 android:textColor="@color/black"
-                android:textSize="13sp"
                 android:textStyle="normal|italic" />
 
 
@@ -64,9 +62,8 @@
                 android:layout_below="@+id/client"
                 android:layout_marginStart="20dp"
                 android:layout_toEndOf="@+id/quantity"
-                android:text="@string/total_price"
+                android:text="@string/unit_price"
                 android:textColor="@color/black"
-                android:textSize="13sp"
                 android:textStyle="normal|italic" />
 
             <TextView
@@ -74,13 +71,23 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/client"
-                android:layout_alignEnd="@+id/client"
-                android:layout_marginStart="5dp"
+                android:layout_toEndOf="@id/unit_price"
+                android:layout_marginStart="16dp"
                 android:layout_marginEnd="@dimen/activity_horizontal_margin"
                 android:text="100$"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="normal" />
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/delete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="16dp"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/client"
+                app:srcCompat="@android:drawable/ic_delete"
+                />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 

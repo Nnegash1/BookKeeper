@@ -1,72 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical">
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="16dp"
-            android:fontFamily="sans-serif-condensed-medium"
-            android:text="@string/invoice"
-            android:textColor="@color/black"
-            android:textSize="35sp"
-            android:textStyle="bold" />
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            android:layout_marginStart="200dp"
-
-            android:layout_marginBottom="30dp"
-            android:backgroundTint="#2090FF"
-            android:clickable="true"
-            android:focusable="true"
-            app:rippleColor="@color/white"
-            app:srcCompat="@android:drawable/ic_input_delete"
-            tools:ignore="ContentDescription" />
-    </LinearLayout>
-
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
     <TextView
-        android:id="@+id/invoice_number"
-        android:layout_width="wrap_content"
+        android:id="@+id/title"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="16dp"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:text="@string/invoice_number"
+        android:layout_marginStart="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/Invoice"
         android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold" />
+        android:textSize="26sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/sub_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sub_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="sans-serif"
+        android:text="@string/Invoice"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/client_information_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
 
     <androidx.cardview.widget.CardView
-
-        android:layout_width="300dp"
-        android:layout_height="180dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/client_information_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="150dp"
         android:backgroundTint="@color/black"
-        app:cardUseCompatPadding="true"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@id/issue_date_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sub_title">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -79,8 +64,8 @@
 
 
             <TextView
-                android:id="@+id/client_name"
-                android:layout_width="200dp"
+                android:id="@+id/client_name_static"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="50dp"
@@ -90,10 +75,22 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:id="@+id/client_email"
-                android:layout_width="200dp"
+                android:id="@+id/client_name"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/client_name"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="16dp"
+                android:layout_toEndOf="@+id/client_name_static"
+                android:text="@string/client_name"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/client_email_static"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/client_name_static"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="16dp"
@@ -102,12 +99,39 @@
                 android:textSize="16sp" />
 
             <TextView
-                android:layout_width="200dp"
+                android:id="@+id/client_email"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/client_email"
+                android:layout_below="@id/client_name_static"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:layout_toEndOf="@+id/client_email_static"
+                android:text="@string/email"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/phone_number_static"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/client_email_static"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="16dp"
+                android:text="@string/phone"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/phone_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/client_email_static"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:layout_toEndOf="@+id/phone_number_static"
                 android:text="@string/phone"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
@@ -126,15 +150,17 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginEnd="16dp"
+        android:id="@+id/issue_date_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/black"
         app:cardCornerRadius="20dp"
-        app:strokeColor="@color/black"
-        app:strokeWidth="20dp"
-        card_view:cardElevation="2dp">
+        app:layout_constraintBottom_toTopOf="@id/due_date_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/client_information_card">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -145,7 +171,6 @@
             android:layout_marginBottom="16dp"
             android:gravity="center">
 
-
             <TextView
                 android:id="@+id/issue_date_static"
                 android:layout_width="wrap_content"
@@ -154,23 +179,24 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="16dp"
                 android:text="@string/issue_date"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/issue_date"
-                android:layout_width="200dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="16dp"
+                android:layout_toStartOf="@id/empty"
                 android:layout_toEndOf="@id/issue_date_static"
                 android:text="@string/issue_date"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <ImageView
+                android:id="@+id/empty"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentEnd="true"
@@ -178,19 +204,24 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="5dp"
-                android:src="@drawable/ic_right_chevron_arrow_round_icon_night"
+                android:src="@drawable/ic_right_chevron_arrow_round_icon"
                 tools:ignore="ContentDescription" />
         </RelativeLayout>
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-
-        android:layout_width="match_parent"
-        android:layout_height="90dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        app:cardCornerRadius="20dp">
+        android:id="@+id/due_date_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="10dp"
+        android:backgroundTint="@color/black"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@id/reference_no_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/issue_date_card">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -208,25 +239,26 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="16dp"
                 android:text="@string/due_date"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/due_date"
-                android:layout_width="200dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginEnd="16dp"
+                android:layout_toStartOf="@id/purchased_item_btn"
                 android:layout_toEndOf="@id/due_date_static"
                 android:text="@string/due_date"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/purchased_item_btn"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_alignParentEnd="true"
@@ -234,22 +266,24 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="5dp"
                 android:layout_marginBottom="5dp"
-                android:src="@drawable/ic_right_chevron_arrow_round_icon_night"
+                android:src="@drawable/ic_right_chevron_arrow_round_icon"
                 tools:ignore="ContentDescription" />
         </RelativeLayout>
+
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-
-        android:layout_width="350dp"
-        android:layout_height="180dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:id="@+id/reference_no_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="150dp"
         android:backgroundTint="@color/black"
-        app:cardUseCompatPadding="true"
-        app:cardCornerRadius="20dp">
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@id/preview_card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/due_date_card">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -258,13 +292,12 @@
             android:layout_marginTop="6dp"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:background="#050505"
-            android:gravity="center">
+            android:background="@color/black">
 
 
             <TextView
                 android:id="@+id/reference_no_static"
-                android:layout_width="110dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="55dp"
@@ -276,18 +309,18 @@
 
             <TextView
                 android:id="@+id/reference_number"
-                android:layout_width="150dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="55dp"
                 android:layout_marginEnd="16dp"
+                android:layout_toEndOf="@+id/reference_no_static"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/balance_due_static"
-                android:layout_width="110dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/reference_no_static"
                 android:layout_marginStart="16dp"
@@ -304,16 +337,16 @@
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/reference_no_static"
-                android:layout_alignParentEnd="true"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="16dp"
+                android:layout_toEndOf="@id/balance_due_static"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/discount_static"
-                android:layout_width="110dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/balance_due_static"
                 android:layout_marginStart="16dp"
@@ -326,27 +359,59 @@
 
             <TextView
                 android:id="@+id/discount"
-                android:layout_width="110dp"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/balance_due_static"
-                android:layout_alignParentEnd="true"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginEnd="16dp"
+                android:layout_toEndOf="@id/discount_static"
                 android:textColor="@color/white"
                 android:textSize="16sp" />
 
-            <ImageView
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentEnd="true"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="0dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp"
-                android:src="@drawable/ic_dots_three"
-                tools:ignore="ContentDescription" />
         </RelativeLayout>
+
     </androidx.cardview.widget.CardView>
 
-</LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/preview_card"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/delete_card"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/reference_no_card">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/preview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            android:backgroundTint="@color/black"
+            android:text="Preview"
+            android:textColor="@color/white" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/delete_card"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@color/black"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/preview_card"
+        app:layout_constraintTop_toBottomOf="@+id/reference_no_card">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/delete"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#F44336"
+            android:backgroundTint="#F44336"
+            android:text="Delete"
+            android:textColor="@color/white" />
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

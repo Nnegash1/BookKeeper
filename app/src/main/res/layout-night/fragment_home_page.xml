@@ -7,56 +7,33 @@
     android:layout_height="match_parent"
     android:background="@android:color/background_dark"
     tools:context="com.example.bookkeeper.presentation.view.HomePageFragment">
-
-    <LinearLayout
+    <RelativeLayout
         android:id="@+id/title"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
+        android:background="@color/white"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:backgroundTint="@color/black"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/ic_baseline_view_headline_24" />
-
-        <TextView
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="20dp"
-            android:fontFamily="sans-serif-condensed"
-            android:text="@string/Invoice"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="30sp"
-            android:textStyle="normal" />
-    </LinearLayout>
+            android:background="@color/secondary_color"
+            android:outlineSpotShadowColor="@color/black"
+            android:clickable="true"
+            android:focusable="true" />
+    </RelativeLayout>
 
-
-    <androidx.appcompat.widget.SearchView
-        android:id="@+id/search"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_below="@id/title"
-        android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:layout_marginTop="@dimen/activity_vertical_margin"
-        android:layout_marginEnd="@dimen/activity_horizontal_margin"
-        android:layout_marginBottom="@dimen/activity_vertical_margin"
-        android:background="@color/invoice_background"
-        android:clickable="true"
-        android:focusable="true" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/search"
+        android:layout_below="@+id/title"
         tools:listitem="@layout/invoice_card" />
 
 

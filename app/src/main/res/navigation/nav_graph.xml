@@ -19,9 +19,6 @@
         <action
             android:id="@+id/action_homePageFragment2_to_fragmentInvoiceDetail3"
             app:destination="@id/fragmentInvoiceDetail3" />
-        <action
-            android:id="@+id/action_homePageFragment2_to_previewPage"
-            app:destination="@id/previewPage" />
     </fragment>
     <fragment
         android:id="@+id/fragmentInvoiceDetail3"
@@ -70,6 +67,21 @@
         tools:layout="@layout/fragment_client_information" >
         <argument
             android:name="invoice_number"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_clientInformation_to_previewPage"
+            app:destination="@id/previewPage" />
+        <action
+            android:id="@+id/action_clientInformation_to_itemRecyclerView"
+            app:destination="@id/itemRecyclerView" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemRecyclerView"
+        android:name="com.example.bookkeeper.presentation.view.ItemRecyclerView"
+        android:label="fragment_item_recycler_view"
+        tools:layout="@layout/fragment_item_recycler_view" >
+        <argument
+            android:name="reference_id"
             app:argType="long" />
     </fragment>
 </navigation>

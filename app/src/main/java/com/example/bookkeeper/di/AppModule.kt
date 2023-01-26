@@ -36,8 +36,6 @@ object AppModule {
         InvoiceDataBase.INVOICE_NAME
     ).build()
 
-
-
     @Provides
     fun provideDao(db: InvoiceDataBase) = db.getDao()
 }

@@ -3,12 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/background_dark"
     android:orientation="vertical"
     tools:context=".presentation.view.FragmentInvoiceDetail">
 
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -17,19 +18,12 @@
         android:layout_marginBottom="16dp"
         android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/pop_up_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="start"
-            android:backgroundTint="@color/black"
-            android:contentDescription="@string/todo"
-            android:src="@drawable/ic_baseline_view_headline_24" />
-
         <TextView
+            android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
             android:fontFamily="sans-serif-condensed"
             android:text="@string/Invoice"
             android:textAlignment="textStart"
@@ -37,18 +31,35 @@
             android:textSize="30sp"
             android:textStyle="normal" />
 
-        <Button
-            android:id="@+id/save_invoice_btn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="90dp"
-            android:backgroundTint="@color/black"
-            android:fontFamily="sans-serif-condensed"
-            android:gravity="center"
-            android:text="@string/save"
-            android:textStyle="bold"
-            android:textColor="@color/white" />
-    </LinearLayout>
+        <androidx.cardview.widget.CardView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="150dp"
+            android:layout_toEndOf="@+id/title"
+            android:background="@color/black"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardCornerRadius="30dp">
+
+            <Button
+                android:id="@+id/save_invoice_btn_"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:clickable="true"
+                android:focusable="true"
+                android:fontFamily="sans-serif-condensed"
+                android:gravity="center"
+                android:text="@string/save"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textStyle="bold" />
+        </androidx.cardview.widget.CardView>
+
+    </RelativeLayout>
 
 
     <com.google.android.material.card.MaterialCardView

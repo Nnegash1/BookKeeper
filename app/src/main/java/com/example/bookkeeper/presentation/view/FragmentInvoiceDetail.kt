@@ -55,6 +55,8 @@ class FragmentInvoiceDetail : Fragment() {
         binding.saveInvoiceBtn.setOnClickListener {
             invoiceVM.addInvoice()
             invoiceVM.clear()
+            findNavController().popBackStack()
+
         }
 
         callTrace()
@@ -66,6 +68,10 @@ class FragmentInvoiceDetail : Fragment() {
             itemRecycler.adapter = itemAdapter
         }
     }
+    override fun onDestroyView() {
+        binding.itemRecycler.adapter = null
+        super.onDestroyView()
+    }
 
     private fun navigateToItemPage() {
         binding.addItemButton.setOnClickListener {
@@ -76,7 +82,7 @@ class FragmentInvoiceDetail : Fragment() {
     }
 
     private fun navigateToClientPage() {
-        binding.clientCard.setOnClickListener {
+        binding.addClientButton?.setOnClickListener {
             val action =
                 FragmentInvoiceDetailDirections.actionFragmentInvoiceDetail3ToFragmentAddClient()
             findNavController().navigate(action)
@@ -84,7 +90,7 @@ class FragmentInvoiceDetail : Fragment() {
     }
 
     private fun navigateToDetailPage() {
-        binding.detail.setOnClickListener {
+        binding.addDetailButton?.setOnClickListener {
             val action =
                 FragmentInvoiceDetailDirections.actionFragmentInvoiceDetail3ToFragmentDetail()
             findNavController().navigate(action)

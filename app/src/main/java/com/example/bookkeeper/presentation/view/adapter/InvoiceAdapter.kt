@@ -1,13 +1,10 @@
 package com.example.bookkeeper.presentation.view.adapter
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bookkeeper.data.data_source.entities.Invoice
-import com.example.bookkeeper.data.data_source.entities.Item
 import com.example.bookkeeper.databinding.InvoiceCardBinding
 
 class InvoiceAdapter(private val selectedInvoice: (Invoice) -> Unit) :
@@ -35,7 +32,6 @@ class InvoiceAdapter(private val selectedInvoice: (Invoice) -> Unit) :
 
     @SuppressLint("NotifyDataSetChanged")
     fun update(newList: List<Invoice>) {
-        val oldSize = invoiceList.size
         invoiceList.clear()
         notifyDataSetChanged()
         invoiceList.addAll(newList)
@@ -50,13 +46,17 @@ class InvoiceCardViewHolder(
     RecyclerView.ViewHolder(binding.root) {
 
     fun display(card: Invoice) {
+        val price = card.item.map { it.unit_price * it.qty }
+        var balance = 0.00
+        if (price.isNotEmpty()) {
+            balance = price.reduce { acc, d -> acc + d } - card.invoiceDetails.discount
+        }
         with(binding) {
             client.text = card.client.name
             invoiceNumber.text = card.invoiceDetails.referenceNo.toString()
             dueDate.text = card.invoiceDetails.issueDate
-            card.item?.forEach { item ->
-                Log.d("TAG", "display: ${item.unit_price}")
-            }.toString()
+            discount?.text = card.invoiceDetails.discount.toString()
+            binding.amount.text = balance.toString()
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.example.bookkeeper.presentation.view
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -25,15 +26,13 @@ class HomePageFragment : Fragment() {
     lateinit var viewModelFactory: InvoiceViewModelFactory
     private lateinit var binding: FragmentHomePageBinding
     private val vm: InvoiceViewModel by viewModels { viewModelFactory }
-    private val adapter = InvoiceAdapter { selectedInvoice ->
-        selectedInvoice(selectedInvoice)
-    }
+    private val adapter = InvoiceAdapter { selectedInvoice -> selectedInvoice(selectedInvoice) }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View =
-        FragmentHomePageBinding.inflate(layoutInflater, container, false).also { binding = it }.root
+        FragmentHomePageBinding.inflate(layoutInflater).also { binding = it }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -55,6 +54,7 @@ class HomePageFragment : Fragment() {
 
         initAdapter()
         vm.getAllInvoice()
+        Log.d("TAG", "onViewCreated: ${binding.search.query}")
         binding.search.setOnClickListener {
             vm.filterInvoiceByClientName("nahom")
         }
@@ -69,9 +69,13 @@ class HomePageFragment : Fragment() {
         }
     }
 
+    override fun onDestroyView() {
+        binding.recyclerView.adapter = null
+        super.onDestroyView()
+    }
+
     private fun selectedInvoice(invoice: Invoice): Invoice {
-        val dialog = FragmentAlertDialog(invoice)
-        dialog.show(parentFragmentManager, "custom_dialog")
+
 //        Toast.makeText(context, invoice.client.name, Toast.LENGTH_SHORT).show()
 //        vm.deleteInvoice(invoice)
         val action =

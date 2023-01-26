@@ -34,7 +34,8 @@
                 android:layout_gravity="start"
                 android:backgroundTint="@color/black"
                 android:src="@drawable/ic_back_arrow"
-                android:text="@string/save" />
+                android:text="@string/save"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/back_button"
@@ -100,7 +101,7 @@
         android:textSize="20sp"
         android:textStyle="bold" />
 
-    <com.google.android.material.textfield.TextInputEditText
+    <TextView
         android:id="@+id/issue_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -109,7 +110,6 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_toEndOf="@+id/invoice_number_static"
-        android:text="@string/o9_4_2022"
         android:textColor="@color/black"
         android:textSize="20sp" />
 
@@ -155,8 +155,6 @@
         android:layout_toEndOf="@id/discount"
         android:background="@color/white"
         android:checked="true"
-        android:clickable="true"
-        android:focusable="true"
         android:fontFamily="sans-serif-condensed"
         android:shadowRadius="@integer/material_motion_duration_short_1"
         android:text="@string/dollar"
@@ -194,7 +192,7 @@
         android:textColor="@color/black" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/reference_number"
+        android:id="@+id/reference_number_auto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/discount_amount"
@@ -208,14 +206,14 @@
         android:textStyle="bold" />
 
     <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/reference_number_auto"
+        android:id="@+id/reference_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/discount_amount"
         android:layout_marginStart="16dp"
         android:layout_marginTop="35dp"
         android:layout_marginEnd="16dp"
-        android:layout_toEndOf="@+id/reference_number"
+        android:layout_toEndOf="@+id/reference_number_auto"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/_000000001"
         android:textColor="@color/black"

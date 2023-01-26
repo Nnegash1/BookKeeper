@@ -3,15 +3,13 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
     android:layout_marginTop="16dp"
     android:layout_marginEnd="16dp"
     android:layout_marginBottom="16dp"
     android:backgroundTint="@color/black"
-    android:clickable="true"
-    android:focusable="true"
     app:cardCornerRadius="20dp"
     app:cardUseCompatPadding="true">
 
@@ -35,7 +33,7 @@
             android:text="@string/client_name"
             android:textAlignment="textStart"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <TextView
@@ -50,11 +48,12 @@
             android:text="@string/due_date"
             android:textAlignment="textStart"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="normal" />
 
+
         <TextView
-            android:id="@+id/amount_static"
+            android:id="@+id/discount_static"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/due_date"
@@ -62,17 +61,48 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
             android:layout_marginBottom="5dp"
+            android:text="@string/discount"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/discount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/due_date"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="5dp"
+            android:text="@string/_0_00"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="normal" />
+
+        <TextView
+            android:id="@+id/amount_static"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/discount"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginBottom="5dp"
             android:text="@string/balance_due"
             android:textAlignment="textStart"
             android:textColor="@color/white"
-            android:textSize="20sp"
+            android:textSize="16sp"
             android:textStyle="normal" />
 
         <TextView
             android:id="@+id/amount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/due_date"
+            android:layout_below="@+id/discount"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="25dp"
             android:layout_marginTop="5dp"

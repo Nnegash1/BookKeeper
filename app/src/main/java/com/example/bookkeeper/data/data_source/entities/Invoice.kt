@@ -10,7 +10,7 @@ data class Invoice(
     @ColumnInfo(name = "Client")
     val client: Client,
     @ColumnInfo(name = "Item")
-    val item: List<Item>?,
+    val item: List<Item>,
     @ColumnInfo(name = "invoiceDetails")
     val invoiceDetails: InvoiceDetails
 )

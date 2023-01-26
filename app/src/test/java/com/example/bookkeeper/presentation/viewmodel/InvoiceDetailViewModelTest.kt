@@ -2,7 +2,6 @@ package com.example.bookkeeper.presentation.viewmodel
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.example.bookkeeper.data.data_source.entities.Item
-import com.example.bookkeeper.data.data_source.local.itemContainer
 import com.example.bookkeeper.domain.repository.InvoiceRepository
 import com.example.bookkeeper.presentation.viewmodel.state.ClientFragmentState
 import com.example.bookkeeper.presentation.viewmodel.state.InvoiceDetailState
@@ -10,27 +9,27 @@ import com.example.bookkeeper.presentation.viewmodel.state.ItemScreenState
 import com.example.bookkeeper.testUtil.MainDispatcherRule
 import io.mockk.coEvery
 import io.mockk.mockk
-import org.junit.*
-import org.junit.Assert.*
+import org.junit.jupiter.api.Assertions.assertEquals
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestInstance
 
+@TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class InvoiceDetailViewModelTest {
 
-    @get:Rule
-    val mainDispatcherRule = MainDispatcherRule()
-
-    @get:Rule
-    val instantTaskExecutorRule = InstantTaskExecutorRule()
+//    @get:Rule
+//    val mainDispatcherRule = MainDispatcherRule()
+//
+//    @get:Rule
+//    val instantTaskExecutorRule = InstantTaskExecutorRule()
 
     private lateinit var viewModel: InvoiceDetailViewModel
     private val repo: InvoiceRepository = mockk()
 
 
-    @Before
     fun setUp() {
         viewModel = InvoiceDetailViewModel(repo)
     }
 
-    @After
     fun tearDown() {
     }
 
